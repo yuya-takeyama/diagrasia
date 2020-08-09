@@ -13,8 +13,8 @@ resource "google_cloudbuild_trigger" "terraform_plan" {
   filename = "terraform/gcp/cloudbuild/plan.yaml"
 
   github {
-    owner = var.github_repo_owner
-    name  = var.github_repo_name
+    owner = "yuya-takeyama"
+    name  = "diagrasia"
 
     pull_request {
       branch = ".*"
@@ -37,8 +37,8 @@ resource "google_cloudbuild_trigger" "terraform_apply" {
   filename = "terraform/gcp/cloudbuild/apply.yaml"
 
   github {
-    owner = var.github_repo_owner
-    name  = var.github_repo_name
+    owner = "yuya-takeyama"
+    name  = "diagrasia"
 
     push {
       branch = "^master$"
