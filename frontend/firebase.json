@@ -8,7 +8,7 @@
     ],
     "rewrites": [
       {
-        "source": "/backend",
+        "source": "/api/v1{,/**}",
         "run": {
           "serviceId": "backend",
           "region": "asia-northeast1"
