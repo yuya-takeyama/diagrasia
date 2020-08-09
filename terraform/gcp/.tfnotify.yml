@@ -1,0 +1,46 @@
+---
+ci: cloudbuild
+
+notifier:
+  github:
+    token: $GITHUB_TOKEN
+    repository:
+      owner: "yuya-takeyama"
+      name: "diagrasia"
+
+terraform:
+  fmt:
+    template: |
+      {{ .Title }}
+
+      {{ .Message }}
+
+      {{ .Result }}
+
+      {{ .Body }}
+
+  plan:
+    template: |
+      {{ .Title }} (GCP) <sup>[CI link]( {{ .Link }} )</sup>
+      {{ .Message }}
+      {{if .Result}}
+      <pre><code>{{ .Result }}
+      </pre></code>
+      {{end}}
+      <details><summary>Details (Click me)</summary>
+
+      <pre><code>{{ .Body }}
+      </pre></code></details>
+
+  apply:
+    template: |
+      {{ .Title }} (GCP) <sup>[CI link]( {{ .Link }} )</sup>
+      {{ .Message }}
+      {{if .Result}}
+      <pre><code>{{ .Result }}
+      </pre></code>
+      {{end}}
+      <details><summary>Details (Click me)</summary>
+
+      <pre><code>{{ .Body }}
+      </pre></code></details>
