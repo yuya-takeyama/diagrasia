@@ -1,4 +1,3 @@
 .terraform
 
 /terraform/gcp/.envrc
-/terraform/gcp/terraform.tfbackend

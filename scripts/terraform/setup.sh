@@ -7,4 +7,4 @@ tar xvzf /tmp/tfnotify.tar.gz -C /usr/local/bin tfnotify
 
 cd "terraform/${TERRAFORM_ENVIRONMENT}"
 echo "Running terraform init"
-terraform init -input=false -backend-config=terraform.tfbackend -no-color
+terraform init -input=false -no-color
