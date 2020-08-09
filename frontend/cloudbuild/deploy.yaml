@@ -1,0 +1,17 @@
+steps:
+  - id: Build
+    name: node:14.7.0-alpine3.10
+    entrypoint: ash
+    args:
+      - -c
+      - |
+        set -eu
+        set -o pipefail
+
+        yarn
+        yarn build
+    dir: frontend
+  - id: Deploy to Firebase Hosting
+    name: gcr.io/project-id/firebase
+    args: ['deploy', '--project=$PROJECT_ID', '--only=hosting']
+    dir: frontend
