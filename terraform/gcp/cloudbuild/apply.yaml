@@ -1,0 +1,27 @@
+steps:
+  - id: Retrieve GITHUB_TOKEN
+    name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - -c
+      - gcloud secrets versions access latest --secret=cloudbuild-terraform-github-token > GITHUB_TOKEN.txt
+  - id: Apply
+    name: hashicorp/terraform:0.12.29
+    entrypoint: /bin/sh
+    args:
+      - -c
+      - |
+        set -eu
+        set -o pipefail
+
+        export GITHUB_TOKEN="$(cat GITHUB_TOKEN.txt)"
+
+        ./scripts/terraform/setup.sh
+        ./scripts/terraform/plan.sh
+        ./scripts/terraform/apply.sh
+options:
+  env:
+    - 'PROJECT_ID=$PROJECT_ID'
+    - 'BUILD_ID=$BUILD_ID'
+    - 'COMMIT_SHA=$COMMIT_SHA'
+    - 'TERRAFORM_ENVIRONMENT=gcp'
