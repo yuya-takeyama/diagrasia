@@ -1,18 +1,22 @@
-name: Test
+name: backend
 
 on:
   push:
     paths:
-      - .github/workflows/services/backend/**
+      - .github/workflows/backend.yaml
       - backend/**
 
 jobs:
   test:
     name: Run yarn test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: backend
     steps:
       - uses: actions/checkout@master
-      - uses: uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1.4.2
         with:
           node-version: '14'
       - run: yarn
