@@ -1,7 +1,15 @@
 name: frontend
 
 on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - .github/workflows/frontend.yaml
+      - frontend/**
   push:
+    branches:
+      - master
     paths:
       - .github/workflows/frontend.yaml
       - frontend/**
