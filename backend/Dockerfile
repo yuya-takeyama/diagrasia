@@ -6,6 +6,7 @@ COPY . /app
 
 RUN yarn && \
   yarn build && \
-  yarn install --prod --frozen-lockfile
+  yarn install --prod --frozen-lockfile && \
+  find lib -name '*.test.js' -o -name '*.test.js.map' | xargs rm
 
-CMD ["node", "lib/main.js"]
+CMD ["node", "lib/server.js"]

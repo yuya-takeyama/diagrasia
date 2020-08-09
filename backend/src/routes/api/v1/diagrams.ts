@@ -7,6 +7,6 @@ interface DiagramsResponse {
   diagrams: Diagram[];
 }
 
-router.get<any, DiagramsResponse>('/', (_, res) => {
+router.get<Record<string, string>, DiagramsResponse>('/', (_, res) => {
   res.json({ diagrams: [] });
 });
