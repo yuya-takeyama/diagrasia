@@ -1,4 +1,4 @@
-resource "google_cloudbuild_trigger" "terraform_plan" {
+resource "google_cloudbuild_trigger" "terraform-plan" {
   provider = google-beta
 
   name        = "terraform-plan"
@@ -22,7 +22,7 @@ resource "google_cloudbuild_trigger" "terraform_plan" {
   }
 }
 
-resource "google_cloudbuild_trigger" "terraform_apply" {
+resource "google_cloudbuild_trigger" "terraform-apply" {
   provider = google-beta
 
   name        = "terraform-apply"
