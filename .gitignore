@@ -1,3 +1,5 @@
 .terraform
+firebase-debug.log
+yarn-error.log
 
 /terraform/gcp/.envrc
