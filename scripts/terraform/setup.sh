@@ -1,4 +1,6 @@
-et -eu
+#!/bin/sh
+
+set -eu
 set -o pipefail
 
 echo "Installing tfnotify"
