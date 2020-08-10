@@ -5,12 +5,14 @@ on:
     branches:
       - master
     paths:
+      - force-update-all-services.txt
       - .github/workflows/backend.yaml
       - backend/**
   push:
     branches:
       - master
     paths:
+      - force-update-all-services.txt
       - .github/workflows/backend.yaml
       - backend/**
 

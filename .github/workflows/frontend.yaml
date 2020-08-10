@@ -5,12 +5,14 @@ on:
     branches:
       - master
     paths:
+      - force-update-all-services.txt
       - .github/workflows/frontend.yaml
       - frontend/**
   push:
     branches:
       - master
     paths:
+      - force-update-all-services.txt
       - .github/workflows/frontend.yaml
       - frontend/**
 

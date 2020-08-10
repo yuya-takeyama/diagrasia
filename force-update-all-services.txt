@@ -1,0 +1,4 @@
+This file is to let all services be updated in GitHub Actions
+To update this file, just do it manually or run this command:
+$ ./scripts/force-update-all-services.sh
+1597045787

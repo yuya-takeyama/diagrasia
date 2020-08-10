@@ -6,6 +6,7 @@ resource "google_cloudbuild_trigger" "backend-deploy" {
   filename = "backend/cloudbuild/deploy.yaml"
 
   included_files = [
+    "force-update-all-services.txt",
     "backend/**",
   ]
 
