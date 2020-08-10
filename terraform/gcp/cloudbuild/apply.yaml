@@ -22,6 +22,7 @@ steps:
 options:
   env:
     - 'PROJECT_ID=$PROJECT_ID'
+    - 'GOOGLE_PROJECT=$PROJECT_ID'
     - 'BUILD_ID=$BUILD_ID'
     - 'COMMIT_SHA=$COMMIT_SHA'
     - 'TERRAFORM_ENVIRONMENT=gcp'
