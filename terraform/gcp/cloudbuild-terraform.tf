@@ -5,6 +5,7 @@ resource "google_cloudbuild_trigger" "terraform_plan" {
   description = "Run terraform plan in Pull Request"
 
   included_files = [
+    "force-update-all-services.txt",
     "terraform/gcp/**",
     "scripts/terraform/**",
   ]
@@ -28,6 +29,7 @@ resource "google_cloudbuild_trigger" "terraform_apply" {
   description = "Run terraform apply when merged into master"
 
   included_files = [
+    "force-update-all-services.txt",
     "terraform/gcp/**",
     "scripts/terraform/**",
   ]
