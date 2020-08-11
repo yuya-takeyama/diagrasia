@@ -6,7 +6,7 @@ steps:
       - -c
       - gcloud secrets versions access latest --secret=cloudbuild-terraform-github-token > GITHUB_TOKEN.txt
   - id: Plan
-    name: hashicorp/terraform:0.13.0-rc1
+    name: hashicorp/terraform:0.13.0
     entrypoint: /bin/sh
     args:
       - -c
