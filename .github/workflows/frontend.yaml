@@ -69,4 +69,4 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn
 
-      - run: yarn lint src/**/*.ts
+      - run: yarn lint src/**/*.{ts,tsx}
