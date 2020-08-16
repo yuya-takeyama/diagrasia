@@ -5,7 +5,7 @@ export const productionErrorHandler = (
   _req: Request,
   res: Response,
   _next: NextFunction,
-) => {
+): void => {
   console.error(err.stack);
   res.status(500).json({ error: { message: 'Internal server error' } });
 };
@@ -15,7 +15,7 @@ export const developmentErrorHandler = (
   _req: Request,
   res: Response,
   _next: NextFunction,
-) => {
+): void => {
   console.error(err.stack);
   res.status(500).json({ error: { message: err.message, stack: err.stack } });
 };
