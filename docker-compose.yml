@@ -18,5 +18,22 @@ services:
       - ./frontend:/app:cached
     stdin_open: true
 
+  backend:
+    container_name: backend
+    build:
+      context: backend
+      dockerfile: Dockerfile.development
+    environment:
+      - FIRESTORE_HOST=backend-firestore
+    volumes:
+      - backend-node-modules:/app/node_modules
+      - ./backend:/app:cached
+    stdin_open: true
+
+  backend-firestore:
+    container_name: backend-firestore
+    image: yuyat/firestore-emulator
+
 volumes:
   frontend-node-modules:
+  backend-node-modules:
