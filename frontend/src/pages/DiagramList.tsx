@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, SFC } from 'react';
 import { Diagram } from '../interfaces';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ interface DiagramsResponse {
   diagrams: Diagram[];
 }
 
-export const DiagramList = () => {
+export const DiagramList: SFC = () => {
   const [diagrams, setDiagrams] = useState<DiagramsResponse>({ diagrams: [] });
 
   const fetchDiagrams = async () => {

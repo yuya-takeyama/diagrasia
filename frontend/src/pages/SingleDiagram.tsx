@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, SFC } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Diagram } from '../interfaces';
 
@@ -6,7 +6,7 @@ interface DiagramResponse {
   diagram: Diagram | undefined;
 }
 
-export const SingleDiagram = () => {
+export const SingleDiagram: SFC = () => {
   const { diagramId } = useParams();
   const [diagram, setDiagram] = useState<DiagramResponse>({
     diagram: undefined,

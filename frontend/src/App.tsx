@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
+import React, { SFC } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { DiagramList } from './pages/DiagramList';
 import { SingleDiagram } from './pages/SingleDiagram';
 
-const App = () => {
+const App: SFC = () => {
   return (
     <Router>
       <Switch>
