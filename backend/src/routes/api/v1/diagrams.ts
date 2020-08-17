@@ -20,7 +20,9 @@ router.get<Record<string, string>, GetDiagramsResponse>(
         diagrams.push({
           id: doc.id,
           userId: data.userId as string,
+          title: data.title as string,
           content: data.content as string,
+          createdAt: data.createdAt.toDate().toISOString(),
         });
       });
       res.json({ diagrams: diagrams });
@@ -41,16 +43,22 @@ router.post<Record<string, string>, PostDiagramResponse>(
       const diagramParam = req.body;
       const diagramId = uuidv4();
       const userId = 'yuya-takeyama';
+      const title = diagramParam.diagram.title;
       const content = diagramParam.diagram.content;
+      const createdAt = new Date();
       diagramsCollection.doc(diagramId).set({
         userId,
+        title,
         content,
+        createdAt,
       });
       res.json({
         diagram: {
           id: diagramId,
           userId,
+          title,
           content,
+          createdAt: createdAt,
         },
       });
     } catch (err) {
@@ -83,7 +91,9 @@ router.get<Record<string, string>, GetDiagramResponse | DiagramNotFoundError>(
           diagram: {
             id: doc.id,
             userId: data.userId,
+            title: data.title,
             content: data.content,
+            createdAt: data.createdAt.toDate().toISOString(),
           },
         });
       } else {
