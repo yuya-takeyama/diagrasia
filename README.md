@@ -13,6 +13,7 @@ A diagram sharing service using [PlantUML](https://plantuml.com/)
 #### Enable APIs
 
 * [Secret Manager](https://console.cloud.google.com/security/secret-manager)
+* [Cloud Build](https://console.cloud.google.com/marketplace/product/google/cloudbuild.googleapis.com)
 
 #### Create GitHub token and set it to Secret Manager
 
@@ -38,4 +39,10 @@ https://console.cloud.google.com/iam-admin/iam
 ```
 $ cd terraform/gcp
 $ vi .envrc # Set your project configurations
+$ terraform init
+$ terraform apply
+
+### Create Firebase project
+
+https://console.firebase.google.com/
 ```
