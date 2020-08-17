@@ -28,11 +28,11 @@ describe('diagrams router', () => {
     describe('with diagrams are stored', () => {
       const diagrams: Diagram[] = [
         {
-          id: '0575cafe-8f02-427c-822b-954338e5a129',
+          id: 'ea255909-7acb-40d4-9f41-a20e1236ad91',
           userId: 'yuya-takeyama',
-          title: 'foo',
-          content: 'foo diagram',
-          createdAt: new Date('2020-08-17T16:15:16.583Z'),
+          title: 'baz',
+          content: 'baz content',
+          createdAt: new Date('2020-08-17T16:16:20.875Z'),
         },
         {
           id: '55b40c12-5c50-49b8-b2a9-e29c96f99d47',
@@ -42,11 +42,11 @@ describe('diagrams router', () => {
           createdAt: new Date('2020-08-17T16:15:56.561Z'),
         },
         {
-          id: 'ea255909-7acb-40d4-9f41-a20e1236ad91',
+          id: '0575cafe-8f02-427c-822b-954338e5a129',
           userId: 'yuya-takeyama',
-          title: 'baz',
-          content: 'baz content',
-          createdAt: new Date('2020-08-17T16:16:20.875Z'),
+          title: 'foo',
+          content: 'foo diagram',
+          createdAt: new Date('2020-08-17T16:15:16.583Z'),
         },
       ];
 
