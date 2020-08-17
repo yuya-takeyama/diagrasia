@@ -2,20 +2,17 @@ import React, { useState, useEffect, SFC } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Diagram } from '../interfaces';
 
-interface DiagramResponse {
-  diagram: Diagram | undefined;
-}
-
 export const SingleDiagram: SFC = () => {
   const { diagramId } = useParams();
-  const [diagram, setDiagram] = useState<DiagramResponse>({
-    diagram: undefined,
-  });
+  const [diagram, setDiagram] = useState<Diagram | undefined>(undefined);
 
   const fetchDiagram = async () => {
     const res = await fetch(`/api/v1/diagrams/${diagramId}`);
     const diagram = await res.json();
-    setDiagram(diagram);
+    setDiagram({
+      ...diagram.diagram,
+      createdAt: new Date(diagram.diagram.createdAt),
+    });
   };
 
   useEffect(() => {
@@ -26,15 +23,19 @@ export const SingleDiagram: SFC = () => {
     <div>
       Single Diagram (ID: {diagramId})
       <div>
-        {diagram.diagram ? (
+        {diagram ? (
           <div>
             <dl>
-              <dt>content</dt>
+              <dt>Title</dt>
+              <dd>{diagram.title}</dd>
+              <dt>Content</dt>
               <dd>
                 <pre>
-                  <code>{diagram.diagram.content}</code>
+                  <code>{diagram.content}</code>
                 </pre>
               </dd>
+              <dt>Created at</dt>
+              <dd>{diagram.createdAt.toISOString()}</dd>
             </dl>
           </div>
         ) : (
