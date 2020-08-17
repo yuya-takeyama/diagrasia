@@ -14,6 +14,7 @@ A diagram sharing service using [PlantUML](https://plantuml.com/)
 
 * [Secret Manager](https://console.cloud.google.com/security/secret-manager)
 * [Cloud Build](https://console.cloud.google.com/marketplace/product/google/cloudbuild.googleapis.com)
+* [Cloud Run](https://console.developers.google.com/apis/library/run.googleapis.com)
 
 #### Create GitHub token and set it to Secret Manager
 
@@ -34,6 +35,10 @@ https://console.cloud.google.com/iam-admin/iam
 
 `*@cloudbuild.gserviceaccount.com`
 
+### Prepare Firebase Docker image
+
+https://qiita.com/zaru/items/509123b2fbf9c95ed434
+
 ### Run initial setup from your laptop
 
 ```
@@ -41,8 +46,8 @@ $ cd terraform/gcp
 $ vi .envrc # Set your project configurations
 $ terraform init
 $ terraform apply
+```
 
 ### Create Firebase project
 
 https://console.firebase.google.com/
-```

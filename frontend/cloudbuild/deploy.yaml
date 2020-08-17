@@ -12,6 +12,6 @@ steps:
         yarn build
     dir: frontend
   - id: Deploy to Firebase Hosting
-    name: gcr.io/mome-dev/firebase
+    name: gcr.io/$PROJECT_ID/firebase
     args: ['deploy', '--project=$PROJECT_ID', '--only=hosting']
     dir: frontend
