@@ -13,7 +13,10 @@ router.get<Record<string, string>, GetDiagramsResponse>(
   '/',
   async (_, res, next) => {
     try {
-      const documents = await diagramsCollection.get();
+      const documents = await diagramsCollection
+        .orderBy('createdAt', 'desc')
+        .limit(25)
+        .get();
       const diagrams: Diagram[] = [];
       documents.forEach((doc) => {
         const data = doc.data();
