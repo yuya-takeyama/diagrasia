@@ -31,7 +31,7 @@ jobs:
           - 8080:8080
     steps:
       - uses: actions/checkout@master
-      - uses: yuya-takeyama/diagrasia/setup-node-and-yarn-install@refactor-yarn-install
+      - uses: ./.github/actions/setup-node-and-yarn-install
         with:
           node-version: '14'
           yarn-lock-path: backend/yarn.lock
@@ -46,7 +46,7 @@ jobs:
         working-directory: backend
     steps:
       - uses: actions/checkout@master
-      - uses: yuya-takeyama/diagrasia/setup-node-and-yarn-install@refactor-yarn-install
+      - uses: ./.github/actions/setup-node-and-yarn-install
         with:
           node-version: '14'
           yarn-lock-path: backend/yarn.lock
