@@ -28,7 +28,7 @@ router.get<Record<string, string>, GetDiagramsResponse>(
           createdAt: data.createdAt.toDate().toISOString(),
         });
       });
-      res.json({ diagrams: diagrams });
+      res.set('Cache-Control', 'no-store').json({ diagrams: diagrams });
     } catch (err) {
       next(err);
     }
@@ -90,7 +90,7 @@ router.get<Record<string, string>, GetDiagramResponse | DiagramNotFoundError>(
       if (doc.exists) {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const data = doc.data()!;
-        res.json({
+        res.set('Cache-Control', 'no-store').json({
           diagram: {
             id: doc.id,
             userId: data.userId,
