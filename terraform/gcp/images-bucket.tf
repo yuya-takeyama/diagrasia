@@ -42,4 +42,8 @@ resource "google_storage_bucket_iam_policy" "images" {
   ]
 }
 POLICY
+
+  depends_on = [
+    google_storage_bucket.images,
+  ]
 }
