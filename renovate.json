@@ -1,5 +1,17 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "updateTypes": ["patch", "pin"],
+      "automerge": true
+    },
+    {
+      "managers": ["npm"],
+      "updateTypes": ["minor"],
+      "depTypeList": ["devDependencies"],
+      "automerge": true
+    }
   ]
 }
