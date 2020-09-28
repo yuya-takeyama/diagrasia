@@ -3,7 +3,7 @@ resource "google_storage_bucket" "images" {
   location      = "ASIA-NORTHEAST1"
   force_destroy = true
 
-  bucket_policy_only = true
+  uniform_bucket_level_access = true
 }
 
 resource "google_storage_bucket_iam_policy" "images" {
