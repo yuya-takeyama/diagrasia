@@ -9,7 +9,7 @@
     },
     {
       "managers": ["npm"],
-      "updateTypes": ["minor"],
+      "updateTypes": ["minor", "patch", "pin"],
       "depTypeList": ["devDependencies"],
       "automerge": true
     }
