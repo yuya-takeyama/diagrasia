@@ -3,5 +3,5 @@ provider "google" {
 }
 
 provider "google-beta" {
-  version = "3.42"
+  version = "3.43"
 }
